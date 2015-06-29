@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootgrid Movie Database</title>
+    <!-- Bootstrap CSS-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jquery.bootgrid.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <h2>Very Limited Bootgrid Movie Database</h2>
+    for more info about <A href="http://www.jquery-bootgrid.com/">bootgrid</a>
+
+    <!--define the table using the proper table tags, leaving the tbody tag empty -->
+    <table id="grid-data" class="table table-condensed table-hover table-striped"
+    data-toggle="bootgrid" data-ajax="true" data-url="/getdata">
+      <thead>
+        <tr>
+          <th data-column-id="id" data-type="numeric" data-identifier="true">id</th>
+          <th data-column-id="movie">Movie</th>
+          <th data-column-id="year" data-type="numeric">year</th>
+          <th data-column-id="genre">Genre</th>
+          <th data-column-id="rating_imdb" data-type="numeric">Rating</th>
+        </tr>
+      </thead>
+    </table>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins and Bootgrid) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Include bootgrid plugin (below), -->
+    <script src="js/jquery.bootgrid.min.js"></script>
+
+    <!-- now write the script specific for this grid -->
+    <script language="javascript">
+      //Refer to http://jquery-bootgrid.com/Documentation for methods, events and settings
+
+      //load gird on page\e load...
+      $("#grid-data").bootgrid({
+        caseSensitive:false /* make search case insensitive */
+      });
+    </script>
+
+  </body>
+</html>
